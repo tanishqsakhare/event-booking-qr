@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Scan QR{% endblock %}
+{% block content %}
+<h2>📷 Live QR Code Scanner</h2>
+<div id="reader" style="width: 400px;"></div>
+<div id="result" class="mt-3"></div>
+
+<script src="https://unpkg.com/html5-qrcode"></script>
+<script>
+function onScanSuccess(decodedText, decodedResult) {
+    fetch("/scan", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": "{{ csrf_token() }}"
+        },
+        body: JSON.stringify({ qr_data: decodedText })
+    })
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("result").innerHTML = `<div class="alert alert-${data.status}">${data.message}</div>`;
+    });
+    html5QrcodeScanner.clear(); // stop scanning after one successful read
+}
+
+const html5QrcodeScanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: 250 });
+html5QrcodeScanner.render(onScanSuccess);
+</script>
+{% endblock %}

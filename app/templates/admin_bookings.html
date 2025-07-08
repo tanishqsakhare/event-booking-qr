@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Booking History{% endblock %}
+{% block content %}
+
+<h2 class="mb-4">📋 Booking History</h2>
+
+<table class="table table-bordered table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>User</th>
+      <th>Event</th>
+      <th>Booked On</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for booking in bookings %}
+    <tr>
+      <td>{{ booking.user.email }}</td>
+      <td>{{ booking.event.title }}</td>
+      <td>{{ booking.timestamp.strftime('%Y-%m-%d %H:%M') }}</td>
+      <td>
+        {% if booking.checked_in %}
+          <span class="badge bg-success">✅ Verified</span>
+        {% else %}
+          <span class="badge bg-secondary">⏳ Not Checked In</span>
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

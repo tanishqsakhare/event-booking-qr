@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}My Bookings{% endblock %}
+{% block content %}
+<h2>My Bookings</h2>
+
+{% if bookings %}
+<ul class="list-group">
+    {% for booking in bookings %}
+    <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+        <div>
+            <strong>{{ booking.event.title }}</strong><br>
+            📍 {{ booking.event.location }}<br>
+            🗓️ {{ booking.event.date.strftime('%Y-%m-%d %H:%M') }}
+        </div>
+        <div class="text-end">
+            <a href="{{ url_for('static', filename=booking.qr_code_path.split('static/')[-1]) }}" target="_blank">
+                <img src="{{ url_for('static', filename=booking.qr_code_path.split('static/')[-1]) }}" alt="QR Code" width="120" class="img-thumbnail mb-2">
+            </a><br>
+            <a href="{{ url_for('static', filename=booking.qr_code_path.split('static/')[-1]) }}" download class="btn btn-outline-success btn-sm">📥 Download QR</a><br>
+            {% if booking.checked_in %}
+                <span class="badge bg-success mt-2">Checked In</span>
+            {% else %}
+                <span class="badge bg-secondary mt-2">Not Checked In</span>
+            {% endif %}
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>You haven’t booked any events yet.</p>
+{% endif %}
+{% endblock %}
