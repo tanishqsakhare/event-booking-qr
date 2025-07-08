@@ -1,0 +1,9 @@
+Flask
+Flask-SQLAlchemy
+Flask-WTF
+Flask-Login
+Flask-Mail
+Flask-Migrate
+python-dotenv
+qrcode
+qrcode[pil]
