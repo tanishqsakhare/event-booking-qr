@@ -1,1 +1,124 @@
+body {
+    background: linear-gradient(to right, #f8f9fa, #e0f7fa);
+    font-family: 'Segoe UI', sans-serif;
+}
 
+.event-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.btn-toggle {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    border: none;
+    transition: background 0.3s ease;
+}
+
+.btn-toggle:hover {
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
+}
+
+.navbar {
+    background: linear-gradient(to right, #343a40, #212529);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.hero-banner {
+    background: linear-gradient(to right, #0072ff, #00c6ff);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    max-height: 180px;
+    object-fit: cover;
+}
+
+.event-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+}
+
+.btn-toggle {
+    transition: transform 0.2s ease;
+}
+
+.btn-toggle:hover {
+    transform: scale(1.05);
+}
+
+body.dark-mode {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+.dark-mode .navbar {
+    background: linear-gradient(to right, #1f1f1f, #000000);
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+    border: 1px solid #333;
+}
+
+.dark-mode .btn-toggle {
+    background: linear-gradient(135deg, #444, #222);
+    color: #fff;
+}
+
+.dark-mode .btn-toggle:hover {
+    background: linear-gradient(135deg, #222, #444);
+}
+
+.dark-mode .hero-banner {
+    background: linear-gradient(to right, #333, #111);
+}
+
+body {
+    background: linear-gradient(to right, #fdfbfb, #ebedee);
+    font-family: 'Segoe UI', sans-serif;
+    transition: background 0.5s ease;
+}
+
+.dark-mode {
+    background: linear-gradient(to right, #1e1e1e, #121212);
+}
+
+body {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    font-family: 'Segoe UI', sans-serif;
+    transition: background 0.5s ease;
+}
+
+.hero-banner {
+    background: linear-gradient(to right, #0072ff, #00c6ff);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.event-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
